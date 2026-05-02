@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google</title>
+    <!-- Link to our shared stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation — upper-right links to other pages -->
+    <nav>
+        <a href="image.html">Images</a>
+        <a href="advanced.html">Advanced Search</a>
+    </nav>
+
+    <div class="page">
+
+        <!-- Logo: coloured spans, no image required -->
+        <div class="logo">
+            <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
+        </div>
+
+        <!--
+            SEARCH FORM
+            action="https://www.google.com/search" — sends the form to Google
+            name="q" — Google reads this as the search query
+        -->
+        <form action="https://www.google.com/search" method="GET">
+            <input
+                class="search-input"
+                type="text"
+                name="q"
+                autofocus
+            >
+            <div class="btn-row">
+                <!-- Regular search -->
+                <button class="btn" type="submit">Google Search</button>
+
+                <!--
+                    I'm Feeling Lucky
+                    btnI is the parameter Google uses to skip results
+                    and jump straight to the first result.
+                -->
+                <button class="btn" type="submit" name="btnI" value="I">
+                    I'm Feeling Lucky
+                </button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>

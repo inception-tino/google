@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google Images</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation — link back to main search -->
+    <nav>
+        <a href="index.html">Search</a>
+        <a href="advanced.html">Advanced Search</a>
+    </nav>
+
+    <div class="page">
+
+        <!-- Smaller logo + "Images" label -->
+        <div class="logo" style="font-size: 52px;">
+            <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
+        </div>
+        <div class="images-label">Images</div>
+
+        <!--
+            IMAGE SEARCH FORM
+            tbm=isch — tells Google to show image results
+                        (tbm = "to be matched", isch = image search)
+        -->
+        <form action="https://www.google.com/search" method="GET">
+            <input type="hidden" name="tbm" value="isch">
+            <input
+                class="search-input"
+                type="text"
+                name="q"
+                autofocus
+            >
+            <div class="btn-row">
+                <button class="btn" type="submit">Google Image Search</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>

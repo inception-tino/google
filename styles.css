@@ -1,0 +1,217 @@
+/* =============================================
+   styles.css
+   Shared stylesheet for all three pages.
+   Link it in every HTML file with:
+     <link rel="stylesheet" href="styles.css">
+============================================= */
+
+/* ----- Reset & Base --------------------------
+   Removes default browser spacing so our layout
+   looks the same in every browser.
+--------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* padding won't add to element width */
+}
+
+body {
+    font-family: arial, sans-serif; /* Google uses Arial */
+    background: #fff;
+    color: #202124;
+}
+
+/* ----- Top Navigation ------------------------
+   position: absolute pulls it out of the normal
+   flow so it sits in the top-right corner without
+   pushing other content around.
+--------------------------------------------- */
+nav {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: flex;
+    gap: 16px;              /* space between each link */
+    align-items: center;
+}
+
+nav a {
+    font-size: 13px;
+    color: #202124;
+    text-decoration: none;  /* no underline by default */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ----- Page Wrapper --------------------------
+   Centers the main content vertically and
+   horizontally on the page.
+--------------------------------------------- */
+.page {
+    display: flex;
+    flex-direction: column; /* stack children top-to-bottom */
+    align-items: center;    /* center horizontally */
+    justify-content: center;/* center vertically */
+    min-height: 100vh;      /* full viewport height */
+    padding-bottom: 80px;   /* stops content touching the very bottom */
+}
+
+/* ----- Google Logo ---------------------------
+   Built from coloured <span> letters — no image
+   needed. margin-bottom adds space below the logo.
+--------------------------------------------- */
+.logo {
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -2px;
+}
+
+/* Each letter gets its own colour via an inline style
+   in the HTML — see the <span style="color:..."> tags */
+
+/* ----- Search Bar ----------------------------
+   width: 100% fills its container.
+   border-radius: 24px gives the pill shape.
+   outline: none removes the browser's default
+   blue focus ring (we add our own with box-shadow).
+--------------------------------------------- */
+.search-input {
+    width: 100%;
+    max-width: 500px;
+    height: 44px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 0 20px;
+    font-size: 16px;
+    outline: none;
+    display: block;         /* so margin: auto works */
+    margin: 0 auto;
+}
+
+.search-input:focus {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    border-color: transparent;
+}
+
+/* ----- Buttons Row ---------------------------
+   margin-top adds space between the bar and buttons.
+   Buttons are centred because the parent uses
+   align-items: center.
+--------------------------------------------- */
+.btn-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* Default grey Google button */
+.btn {
+    background: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    padding: 0 16px;
+    height: 36px;
+    cursor: pointer;        /* hand cursor on hover */
+    font-family: arial, sans-serif;
+}
+
+.btn:hover {
+    border-color: #dadce0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Blue button — used for "Advanced Search" submit */
+.btn-blue {
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 0 20px;
+    height: 36px;
+    cursor: pointer;
+    font-family: arial, sans-serif;
+}
+
+.btn-blue:hover {
+    background: #1765cc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ----- Advanced Search Layout ----------------
+   A two-column layout: labels on the left,
+   inputs on the right.
+   We use a <table> to keep everything lined up.
+--------------------------------------------- */
+.advanced-table {
+    border-collapse: collapse; /* removes gaps between cells */
+    margin: 24px auto 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+.advanced-table td {
+    padding: 8px 12px;
+    vertical-align: middle;
+}
+
+/* Label column — right-aligned so labels sit
+   neatly next to their inputs */
+.advanced-table td:first-child {
+    text-align: right;
+    font-size: 14px;
+    white-space: nowrap;    /* stops labels wrapping */
+    width: 240px;
+}
+
+/* Input column */
+.advanced-table input[type="text"] {
+    width: 320px;
+    height: 32px;
+    border: 1px solid #dfe1e5;
+    border-radius: 4px;     /* slight rounding, not full pill */
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.advanced-table input[type="text"]:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+/* Submit button row — aligns button to the right
+   edge of the table inputs */
+.advanced-submit {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* ----- "Images" sub-label --------------------
+   Shown on the Image Search page next to the logo.
+--------------------------------------------- */
+.images-label {
+    font-size: 22px;
+    color: #70757a;
+    margin-bottom: 20px;
+    margin-top: -8px;
+}
+
+/* ----- Advanced page heading ----------------- */
+.advanced-heading {
+    font-size: 18px;
+    font-weight: normal;
+    color: #202124;
+    margin-bottom: 0;
+    align-self: flex-start;     /* left-align inside the flex column */
+    margin-left: calc(50% - 300px); /* lines up with table left edge */
+}

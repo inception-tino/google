@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google Advanced Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation — link back to main search -->
+    <nav>
+        <a href="index.html">Search</a>
+        <a href="image.html">Images</a>
+    </nav>
+
+    <div class="page">
+
+        <!-- Smaller logo -->
+        <div class="logo" style="font-size: 52px; margin-bottom: 12px;">
+            <span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span>
+        </div>
+
+        <p class="advanced-heading">Advanced Search</p>
+
+        <!--
+            ADVANCED SEARCH FORM
+            Google's advanced search uses these special parameters:
+              as_q   = pages containing ALL these words
+              as_epq = pages containing this EXACT phrase
+              as_oq  = pages containing ANY of these words
+              as_eq  = pages containing NONE of these words
+        -->
+        <form action="https://www.google.com/search" method="GET">
+            <table class="advanced-table">
+                <tr>
+                    <td>all these words:</td>
+                    <td><input type="text" name="as_q"></td>
+                </tr>
+                <tr>
+                    <td>this exact word or phrase:</td>
+                    <td><input type="text" name="as_epq"></td>
+                </tr>
+                <tr>
+                    <td>any of these words:</td>
+                    <td><input type="text" name="as_oq"></td>
+                </tr>
+                <tr>
+                    <td>none of these words:</td>
+                    <td><input type="text" name="as_eq"></td>
+                </tr>
+            </table>
+
+            <!-- Blue submit button, lined up with the right edge of the table -->
+            <div class="advanced-submit">
+                <button class="btn-blue" type="submit">Advanced Search</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>
